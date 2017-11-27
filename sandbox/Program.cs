@@ -12,16 +12,20 @@ namespace sandbox
         static void Main(string[] args)
         {
             int i = 0;
-            do
+            int user_count = 0;
+
+            while (user_count < 20 && user_count == 0)
             {
-                while (!Console.KeyAvailable)
+                Console.WriteLine(i);
+                Thread.Sleep(1000);
+                
+                if (Console.ReadKey(true).Key == ConsoleKey.Spacebar)
                 {
-                    // Do something
-                    Console.WriteLine(i);
-                    Thread.Sleep(1000);
-                    i++;
+                    user_count += i;
+                    Console.WriteLine(i + " has been added!");
                 }
-            } while (Console.ReadKey(true).Key != ConsoleKey.Spacebar);
+                i++;
+            }
         }
     }
 }
