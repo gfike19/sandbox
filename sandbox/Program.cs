@@ -9,27 +9,34 @@ namespace sandbox
 {
     class Program
     {
+        //works but don't know why off count is needed
         static void Main(string[] args)
         {
+            ConsoleKeyInfo cki;
             int i = 0;
             int user_input = 0;
+            int off_count = 0;
             do
             {
-                while (!Console.KeyAvailable)
+
+                while (Console.KeyAvailable == false)
                 {
-                    // Do something
                     Console.WriteLine(i);
                     Thread.Sleep(1000);
                     i++;
-
                 }
-                
-                if (Console.ReadKey(true).Key == ConsoleKey.Spacebar)
+                    
+
+                cki = Console.ReadKey(true);
+                if (cki.Key == ConsoleKey.Spacebar)
                 {
                     user_input += i;
+                    off_count++;
                     Console.WriteLine("The user took " + (i - 1));
                 }
-            } while (i < 100);
+            } while (cki.Key != ConsoleKey.Escape);
+            Console.WriteLine("Total is: " + (user_input - off_count) + "\nPress Enter to exit");
+            Console.ReadLine();
         }
     }
 }
