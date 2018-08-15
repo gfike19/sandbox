@@ -11,17 +11,6 @@ namespace sandbox
     {
         static void Main(string[] args)
         {
-            int i = 0;
-            do
-            {
-                while (!Console.KeyAvailable)
-                {
-                    // Do something
-                    Console.WriteLine(i);
-                    Thread.Sleep(1000);
-                    i++;
-                }
-            } while (Console.ReadKey(true).Key != ConsoleKey.Spacebar);
         }
     }
 }
