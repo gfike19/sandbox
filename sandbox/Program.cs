@@ -11,6 +11,9 @@ namespace sandbox
     {
         static void Main(string[] args)
         {
+            Console.WriteLine((float)3.0000);
+            Console.WriteLine((double)3.0000);
+            Console.ReadLine();
         }
     }
 }
