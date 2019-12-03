@@ -25,7 +25,7 @@ namespace sandbox
                     Thread.Sleep(1000);
                     i++;
                 }
-                    
+
 
                 cki = Console.ReadKey(true);
                 if (cki.Key == ConsoleKey.Spacebar)
